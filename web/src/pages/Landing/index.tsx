@@ -10,6 +10,7 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 import './styles.css';
+import PageHeader from '../../components/PageHeader';
 
 function Landing() {
   const [totalConnections, setTotalConnections] = useState(0);
@@ -24,17 +25,33 @@ function Landing() {
 
   return (
     <div id="page-landing">
-      <div id="page-landing-content" className="container">
-        <div className="logo-container">
-          <img src={logoImg} alt="Logo Proffy" />
-          <h2>Sua plataforma de estudos online.</h2>
+      <PageHeader>
+
+        <div className="header-container">
+          <div className="logo-container">
+            <img src={logoImg} alt="Logo Proffy" />
+            <h2>Sua plataforma de estudos online.</h2>
+          </div>
+
+          <img
+            src={landingImg}
+            alt="Plataforma de estudos."
+            className="hero-image"
+          />
         </div>
 
-        <img
-          src={landingImg}
-          alt="Plataforma de estudos."
-          className="hero-image"
-        />
+      </PageHeader>
+
+      <div id="page-landing-content" >
+
+        <div className="welcome-messege">
+          <h3>
+            Seja bem-vindo.
+          </h3>
+          <h4>
+            O que deseja fazer ?
+          </h4>
+        </div>
 
         <div className="buttons-container">
 
@@ -48,10 +65,12 @@ function Landing() {
           </Link>
         </div>
 
-        <span className="total-connections">
-          Total de {totalConnections} conexões já realizadas
-          <img src={purpleHeartIcon} alt="Coração roxo" />
-        </span>
+        <div className="total-connections">
+          <span>
+            Total de {totalConnections} conexões já realizadas
+            <img src={purpleHeartIcon} alt="Coração roxo" />
+          </span>
+        </div>
 
       </div>
     </div>

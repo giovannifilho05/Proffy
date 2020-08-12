@@ -1,5 +1,10 @@
+#page-teacher-list {
+  width: 100vw;
+  height: 100vh;
+}
+
 #search-teachers {
-  margin-top: 3.2rem;
+  margin: 3.2rem 0;
 }
 
 #search-teachers label {
@@ -40,11 +45,12 @@
   }
 
   #search-teachers {
+    width: 100%;
+    margin-top: 7rem;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
-    position: absolute;
-    bottom: -28px;
   }
 
   #search-teachers .input-block+.input-block,
@@ -54,7 +60,7 @@
 
   #page-teacher-list main {
     padding: 3.2rem 0;
-    max-width: 740px;
+    max-width: 74rem;
     margin: 0 auto;
   } 
 }

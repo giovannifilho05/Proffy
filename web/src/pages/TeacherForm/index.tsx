@@ -7,6 +7,7 @@ import Select from '../../components/Select';
 import Input from '../../components/Input';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
+import HeaderDescription from '../../components/HeaderDescription';
 
 import './styles.css';
 import api from '../../services/api';
@@ -69,9 +70,16 @@ function TeacherForm() {
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
-        title="Que incrível que você quer dar aulas."
-        description="O primeiro passo é preencher esse formulário de inscrição."
-      />
+        title="Dar aulas"
+      >
+        <HeaderDescription
+          title="Que incrível que você quer dar aulas."
+          description="O primeiro passo é preencher esse 
+            formulário de inscrição."
+          icon="rocket"
+          label={['Prepare-se!', 'vai ser o máximo.']}
+        />
+      </PageHeader>
 
       <main>
         <form onSubmit={handleCreateClass}>
@@ -138,7 +146,7 @@ function TeacherForm() {
             </button>
             </legend>
 
-            {scheduleItems.map((scheduleItem, index)=> {
+            {scheduleItems.map((scheduleItem, index) => {
               return (
                 <div key={index} className="schedule-item">
                   <Select
@@ -156,16 +164,16 @@ function TeacherForm() {
                       { value: '6', label: 'Sábado' },
                     ]}
                   />
-                  <Input 
-                    name="from" 
-                    label="Das" 
-                    type="time" 
+                  <Input
+                    name="from"
+                    label="Das"
+                    type="time"
                     value={scheduleItem.from}
                     onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
                   />
-                  <Input 
-                    name="to" 
-                    label="Até" 
+                  <Input
+                    name="to"
+                    label="Até"
                     type="time"
                     value={scheduleItem.to}
                     onChange={e => setScheduleItemValue(index, 'to', e.target.value)}

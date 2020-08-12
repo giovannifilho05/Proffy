@@ -14,6 +14,7 @@
   --color-text-title: #32264D;
   --color-text-complement: #9C98A6;
   --color-text-base: #6A6180;
+  --color-text-input: #aaa8af;
   --color-line-in-white: #E6E6F0;
   --color-input-background: #F8F8FC;
   --color-button-text: #FFFFFF;
@@ -30,6 +31,7 @@
 html, 
 body, 
 #root {
+  width: 100vw;
   height: 100vh;
 }
 
