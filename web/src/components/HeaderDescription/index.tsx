@@ -19,7 +19,7 @@ const HeaderDescription: React.FC<HeaderDescriptionProps> = (props) => {
 
   return (
     <div id="header-description">
-      <div className="content">
+      <div className="content-header-description">
         <div className="description-text">
           <strong>{props.title}</strong>
           {props.description && <p>{props.description}</p>}

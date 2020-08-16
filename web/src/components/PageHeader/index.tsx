@@ -23,7 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, children }) => {
         <img src={logoImg} alt="Proffy" />
       </div>
 
-      {children && <div className="children">{children}</div>}
+      {children && <div className="page-header-children">{children}</div>}
 
     </header>
   );

@@ -7,11 +7,17 @@ import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Select from '../../components/Select';
 import Input from '../../components/Input';
 import HeaderDescription from '../../components/HeaderDescription';
+import ScreenMessage from '../../components/ScreenMessage';
 
 import './styles.css';
 
 function TeacherList() {
   const [teachers, setTeachers] = useState([]);
+
+  // -1 No research has yet been carried out
+  //  0 There is no teacher available
+  //  1 There is a teacher available
+  const [haveTeachers, setHaveTeachers] = useState(-1);
 
   const [subject, setSubject] = useState('Matemática');
   const [week_day, setWeekDay] = useState('1');
@@ -28,7 +34,14 @@ function TeacherList() {
       }
     })
 
+    if (!response.data.length) {
+      setHaveTeachers(0);
+    } else {
+      setHaveTeachers(1);
+    }
+
     setTeachers(response.data);
+
   }
 
   return (
@@ -90,15 +103,27 @@ function TeacherList() {
         </HeaderDescription>
       </PageHeader>
 
-          <main>
-            {teachers.map((teacher: Teacher) => {
-              return (
-                <TeacherItem key={teacher.id}
-                  teacher={teacher}
-                />
-              );
-            })}
-          </main>
+      <main>
+        {(haveTeachers === -1 &&
+          <ScreenMessage message="Nenhuma pesquisa realizada." />
+        ) || (haveTeachers === 0 &&
+          <ScreenMessage message="Nenhum professor disponível." />
+        )
+        }
+        {teachers.map((teacher: Teacher) => {
+          return (
+            <TeacherItem key={teacher.id}
+              teacher={teacher}
+            />
+          );
+        })
+        }
+
+        {!!teachers.length &&
+          <ScreenMessage message="Estes são todos os resultados" />
+        }
+
+      </main>
 
     </div>
   );

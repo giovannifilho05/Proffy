@@ -103,6 +103,8 @@
   font-size: 1.4rem;
   color: var(--color-text-complement);
 
+  margin-bottom: 5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,8 +116,7 @@
 
 @media(min-width: 1100px) {
   #page-landing .header-container {
-    height: 100%;
-    max-height: 27rem;
+    height: 60vh;
     display: flex;
   }
 
@@ -177,7 +178,7 @@
     height: 10.4rem;
     font-size: 2.4rem;
     padding: 0;
-    
+
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -189,6 +190,7 @@
 
   #page-landing-content .total-connections {
     width: 80%;
+    margin-bottom: 0;
     grid-area: total;
     justify-self: center;
   }

@@ -15,8 +15,14 @@ export interface Teacher {
   name: string;
   subject: string;
   whatsapp: string;
+  schedule: [Schedule];
 }
 
+export interface Schedule {
+  week_day: number;
+  from: string;
+  to: string;
+}
 
 interface TeacherItemProps {
   teacher: Teacher;
