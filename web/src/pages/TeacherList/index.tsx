@@ -61,7 +61,7 @@ function TeacherList() {
               label="Matéria"
               value={subject}
               valueDefaultLabel="Selecione"
-              onChange={(e) => { setSubject(e.target.value) }}
+              onChangeValue={(element: any) => { setSubject(element.value) }}
               options={[
                 { value: 'Artes', label: 'Artes' },
                 { value: 'Biologia', label: 'Biologia' },
@@ -76,7 +76,7 @@ function TeacherList() {
               label="Dia da Semana"
               value={week_day}
               valueDefaultLabel="Selecione"
-              onChange={(e) => { setWeekDay(e.target.value) }}
+              onChangeValue={(element: any) => { setWeekDay(element.value) }}
               options={[
                 { value: '0', label: 'Domingo' },
                 { value: '1', label: 'Segunda-Feira' },

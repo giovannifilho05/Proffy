@@ -120,7 +120,7 @@ function TeacherForm() {
               name="subject"
               label="Matéria"
               value={subject}
-              onChange={(e) => { setSubject(e.target.value) }}
+              onChangeValue={(element: any) => { setSubject(element.value) }}
               options={[
                 { value: 'Artes', label: 'Artes' },
                 { value: 'Biologia', label: 'Biologia' },
@@ -153,7 +153,7 @@ function TeacherForm() {
                     name="week_day"
                     label="Dia da Semana"
                     value={scheduleItem.week_day}
-                    onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
+                    onChangeValue={(element: any) => setScheduleItemValue(index, 'week_day', element.value)}
                     options={[
                       { value: '0', label: 'Domingo' },
                       { value: '1', label: 'Segunda-Feira' },

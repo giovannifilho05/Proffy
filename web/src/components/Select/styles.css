@@ -1,36 +1,87 @@
 .select-block {
   position: relative;
-  /* padding: 0 1.6rem; */
 }
 
 .select-block + .select-block {
   margin-top: 1.4rem;
 }
 
-.select-block label {
+.select-block .label {
   font-size: 1.4rem;
+  color: var(--color-text-in-primary)
 }
 
-.select-block select {
+.select-block .select {
   width: 100%;
   height: 5.6rem;
-  padding: 0 10px;
+  padding: 0 20px;
   margin-top: 0.8rem;
   border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
   background: var(--color-input-background);
   border: 1px solid var(--color-line-in-white);
-  outline: 0;
+  /* border: 2px solid var(--color-line-in-white); */
   font: 1.6rem Archivo;
   color: var(--color-text-input);
 }
 
-.input-block:focus-within::after {
-  width: calc(100% - 3.2rem);
-  height: 2px;
-  content: '';
-  background: var(--color-primary-light);
+.select-block .select.select-open {
+  border-bottom: 1px;
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+
+}
+.select-block .select .arrowIcon {
+  height: 10px;
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 0;
+  right: 20px;
+}
+
+.select-block .select .arrowIcon.arrowIconUp {
+  transform: rotate(180deg);
+}
+
+
+.select-block .option-block {
+  width: 100%;
+  display: none;
+  z-index: 5;
+}
+
+.select-block .option-block.option-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-block .option {
+  list-style: none;
+  width: 100%;
+  border: 0.5px solid var(--color-line-in-white);
+  border-left: 1px solid var(--color-line-in-white);
+  border-right: 1px solid var(--color-line-in-white);
+  padding: 10px 20px;
+  background: var(--color-input-background);
+}
+
+.select-block .option:last-child {
+  border-radius: 0rem 0rem 0.8rem 0.8rem;
+}
+
+@media (min-width: 1100px){
+  .select-block .option {
+    position: relative;
+  }
+
+  .select-block .option-block {
+    position: absolute;
+
+  }
+  .select-block .option:hover {
+    background: var(--color-input-background-hover);
+    font-weight: 700;
+  }
+
+  .select-block .option:hover {
+    border-left: 2px solid var(--color-primary-light);
+  }
 }
